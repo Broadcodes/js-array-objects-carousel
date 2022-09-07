@@ -63,6 +63,23 @@ const rightArrowButton = document.getElementById('right-arrow');
 leftArrowButton.addEventListener('click', moveCarouselPrevious);
 rightArrowButton.addEventListener('click', moveCarouselForward);
 
+// Bonus:
+// E se volessi un bottone per invertire la "direzione" del carosello nell'avanzamento automatico?
+const container = document.querySelector(".container");
+const buttonRewind = document.createElement("button");
+buttonRewind.classList.add("buttonCarouselRewind");
+buttonRewind.innerHTML = "Rewind";
+
+buttonRewind.addEventListener("click", function(){
+    clearInterval(idInterval);
+    setInterval(function(){
+        activeIndex = activeIndex > 0 ? activeIndex - 1 : images.length - 1;
+        buildCarousel(images, imagesObject, activeIndex);
+    }, CHANGE_IMAGE_DELAY * 1000);
+    buttonRewind.disabled = true;
+});
+
+container.append(buttonRewind);
 
 function moveCarouselForward() {
     clearInterval(idInterval)

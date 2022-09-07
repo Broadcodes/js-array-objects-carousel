@@ -20,7 +20,7 @@ body {
 .container {
     transform: translateY(12%);
     max-width: 1200px;
-    margin: 0 auto
+    margin: 0 auto;    
 }
 
 .carousel-container {
@@ -106,4 +106,26 @@ body {
     border-radius: 50%;
     border: 2px solid black;
     background-color: yellowgreen;
+}
+
+.carousel-navigation button:hover {
+    color: #fff;
+    border: 2px dotted rgb(86, 86, 86);
+}
+
+.buttonCarouselRewind{
+    width: 100px;
+    height: 30px;
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50px);
+    border-radius: 10px;
+    background-color: rgba(210, 236, 255, 1);
+    border: 2px solid rgb(84, 144, 187);
+}
+
+.buttonCarouselRewind:hover{
+    background-color: rgb(149, 190, 220);
+    color: rgb(255, 255, 255);;
 }
