@@ -72,10 +72,7 @@ buttonRewind.innerHTML = "Rewind";
 
 buttonRewind.addEventListener("click", function(){
     clearInterval(idInterval);
-    setInterval(function(){
-        activeIndex = activeIndex > 0 ? activeIndex - 1 : images.length - 1;
-        buildCarousel(images, imagesObject, activeIndex);
-    }, CHANGE_IMAGE_DELAY * 1000);
+    setInterval(moveCarouselPrevious, CHANGE_IMAGE_DELAY * 1000);
     buttonRewind.disabled = true;
 });
 
